@@ -1,0 +1,26 @@
+# CLion
+.idea/workspace.xml
+.idea/
+
+# Build directories
+cmake-build-*/
+
+# CMake generated
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+build.ninja
+compile_commands.json
+Makefile
+
+# Executables
+*.exe
+*.out
+
+# Object files
+*.o
+*.obj
+
+# Debug
+*.ilk
+*.pdb
