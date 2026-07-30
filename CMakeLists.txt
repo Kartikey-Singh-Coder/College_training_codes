@@ -13,6 +13,7 @@ foreach(FILE ${PRACTICE_FILES})
     get_filename_component(NAME ${FILE} NAME_WE)
 
     add_executable(${NAME} ${FILE}
-            src/csep_practice_binary_search.c)
+            "src/c codes/csep_practice_binary_search.c"
+    )
 
 endforeach()
