@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 int bin_search(int *array,int target,int low, int high) {
     int mid = low +(high - low)/2;
     if (low >high) return -1;
