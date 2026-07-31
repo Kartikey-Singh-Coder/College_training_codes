@@ -6,14 +6,13 @@ set(CMAKE_C_STANDARD 11)
 
 file(GLOB PRACTICE_FILES
         CONFIGURE_DEPENDS
-        "${CMAKE_CURRENT_SOURCE_DIR}/src/*.c")
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/c codes/*.c"
+)
 
 foreach(FILE ${PRACTICE_FILES})
 
     get_filename_component(NAME ${FILE} NAME_WE)
 
-    add_executable(${NAME} ${FILE}
-            "src/c codes/csep_practice_binary_search.c"
-    )
+    add_executable(${NAME} ${FILE})
 
 endforeach()
