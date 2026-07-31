@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
-int adjacent_swap(int *array,int sizeArray) {
+void adjacent_swap(int *array,const int sizeArray) {
     int temp = 0;
     for (int i = 0; i <sizeArray-1 ; i+=2) {
         temp = array[i];
@@ -13,6 +12,7 @@ int adjacent_swap(int *array,int sizeArray) {
     }
 }
 int main() {
-    int array[] = {2,3,2,8,9};
-    adjacent_swap(array,5);
+    int array[] = {2,5,6,9,8,14,25,50,98,21};
+    int size = sizeof(array) / sizeof(array[0]);
+    adjacent_swap(array,size);
 }
