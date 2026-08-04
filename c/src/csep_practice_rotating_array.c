@@ -10,7 +10,12 @@ int array_rotater(const int *array,const int offset,const int arraySize) {
     int rot[arraySize];
     for (int i = 0; i < arraySize; i++) {
         const int newIndex = (i + offset) % arraySize;
-        rot[newIndex] = array[i];
+            if (array != NULL) {
+                rot[newIndex] = array[i];
+            }
+            else {
+                return -1;          // memory allocation recatch
+            }
     }
     printf("----:rotated array :-_-- \n");
     for (int j = 0; j < arraySize ; j++) {
