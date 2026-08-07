@@ -14,7 +14,7 @@ int array_rotater(const int *array,const int offset,const int arraySize) {
                 rot[newIndex] = array[i];
             }
             else {
-                return -1;          // memory allocation recatch
+                return -1;          // memory allocation failure recatch
             }
     }
     printf("----:rotated array :-_-- \n");
