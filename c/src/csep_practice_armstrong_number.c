@@ -1,7 +1,6 @@
 //
 // Created by ALPHA BASE on 22-Jul-26.
 //
-#include <stdbool.h>
 #include <stdio.h>
 #include <math.h>
 int main(){
