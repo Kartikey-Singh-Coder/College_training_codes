@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title style="accent-color: crimson" ;font-color="white">Registration Form</title>
+    <script>
+        function validateForm(){
+            //get name and pasdword
+            var name = document.getElementById("name").value;
+            var password = document.getElementById("password").value;
+             //name validation
+            if (name.length < 6){
+                alert("Please enter at least 6 characters in name field");
+                return false;
+            }
+            if (!/^[A-Za-z]+$/.test(name)){
+                alert("Name must contain alphabets only");
+                return false;
+            }
+            // password validation
+            if(password.length < 6){
+                alert("Password must be at least 6 characters");
+                return false;
+            }
+            alert("details valid");
+            return true;
+        }
+    </script>
+</head>
+<body style ="background-color:darkorange; color: white;">
+<h1>Registration Form</h1>
+<form onsubmit="return validateForm()">
+    <!--name-->
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <br><br>
+
+    <span>Sex:</span>
+    <input type="radio" id="male" name="sex" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="sex" value="female">
+    <label for="female">Female</label>
+    <input type="radio" id="other" name="sex" value="other">
+    <label for="other">Other</label>
+    <br><br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob">
+    <br><br>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone">
+    <br><br>
+
+    <input type="submit" value="Register">
+    <input type="reset" value="Reset">
+</form>
+</body>
+</html>
