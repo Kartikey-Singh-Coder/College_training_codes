@@ -10,7 +10,10 @@ node* createnode() {
     newnode->next = nullptr;
     return newnode;
 }
-node* createlist(int nodelimit,node* head) {
+node* createlist(node* head) {
+    int nodelimit = 0;
+    std::cout<< "enter number of nodes to be made"<<std::endl;
+    std::cin >> nodelimit;
     for (int i = 0; i < nodelimit; i++) {
         node* newnode = createnode();
         if (head == nullptr) {
@@ -27,14 +30,15 @@ node* createlist(int nodelimit,node* head) {
     return head;
 }
 void displaylist(node* head) {
-    node* temp = head;
+    auto* temp = head;
     while (temp != nullptr) {
         std::cout << temp->data << "->";
         temp = temp->next;
     }
     std::cout << "null" << std::endl;
 }
-node* middle(node* head) {
+
+node* middle(node* head) {            // leetcode 876
     node* slow = head;
     node* fast = head;
     while (fast != nullptr && fast->next != nullptr) {
@@ -42,6 +46,9 @@ node* middle(node* head) {
         fast = fast->next->next;
     }
     return slow;
+}
+void mergeList(node*& head1, node*& head2) {
+
 }
 void printnode(const node* node) {
     std::cout <<std::endl<< "null->" << node->data << "<-null" << std::endl;
@@ -61,8 +68,8 @@ bool L_Search(node* head) {
     }
     return false;
 }
-node* LL_Reversal(node*& head) {
-    node* temp = head;
+node* LL_Reversal(node*& head) {      //leetcode 206
+    auto* temp = head;
     node* prev = nullptr;
     while (temp != nullptr) {
         node* current = temp;
@@ -73,8 +80,8 @@ node* LL_Reversal(node*& head) {
     return prev;
 }
 void delete_at_pos(node* &head) {
-    node* temp = head;
-    node* current = head;
+    auto* temp = head;
+    auto* current = head;
     std::cout<<  "enter the position of element you want to delete"<<std::endl;
     int pos = 0;
     std::cin >> pos;
@@ -102,7 +109,7 @@ void insert_at_pos(node*& head) {
     int data = 0;
     std::cout << "enter the data" << std::endl;
     std::cin >> data;
-    node* newnode = new node;
+    auto* newnode = new node;
     newnode->data = data;
     if (pos == 0) {
         newnode->next = head;
@@ -122,4 +129,37 @@ void insert_at_pos(node*& head) {
     }
     newnode->next = temp->next;
     temp->next = newnode;
+}
+node* hasCycleStart(node* head) {
+    node* slow = head;
+    node* fast = head;
+    while (fast != nullptr && fast->next != nullptr) {
+        slow = slow->next;
+        fast = fast->next->next;
+        if (slow == fast) {
+            slow = head;
+            while (slow != fast) {
+                slow = slow->next;
+                fast = fast->next;
+            }
+            return slow;
+        }
+    }
+    return nullptr;
+}
+node* NthNodefromEnd(node* head, int N) {   // related to leetcode 19
+    node* slow = head;
+    node* fast = head;
+    for (int i = 0; i < N; i++) {
+        if (fast == nullptr) {
+            return nullptr;
+        }
+        fast = fast->next;
+    }
+    slow = slow->next;
+    while (fast != nullptr) {
+        fast = fast->next;
+        slow = slow->next;
+    }
+    return slow;
 }
