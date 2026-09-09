@@ -1,19 +1,16 @@
+#pragma once
 #include<iostream>
-using namespace std;
-typedef struct node {
-    int data;
-    node *next;
-}snode;
-static node* createnode() {
+#include<LINKED_LIST.h>
+node* createnode() {
     node* newnode = new node;
     int data = 0;
     printf("enter data for this node : ");
-    cin >> data;
+    std::cin >> data;
     newnode->data = data;
     newnode->next = nullptr;
     return newnode;
 }
-static node* createlist(int nodelimit,node* head) {
+node* createlist(int nodelimit,node* head) {
     for (int i = 0; i < nodelimit; i++) {
         node* newnode = createnode();
         if (head == nullptr) {
@@ -26,19 +23,18 @@ static node* createlist(int nodelimit,node* head) {
             }
             temp->next = newnode;
         }
-
     }
     return head;
 }
-static void displaylist(node* head) {
+void displaylist(node* head) {
     node* temp = head;
     while (temp != nullptr) {
-        cout << temp->data << "->";
+        std::cout << temp->data << "->";
         temp = temp->next;
     }
-    cout << "null" << endl;
+    std::cout << "null" << std::endl;
 }
-static node* middle(node* head) {
+node* middle(node* head) {
     node* slow = head;
     node* fast = head;
     while (fast != nullptr && fast->next != nullptr) {
@@ -47,25 +43,25 @@ static node* middle(node* head) {
     }
     return slow;
 }
-void static printnode(const node* node) {
-    cout <<endl<< "null->" << node->data << "<-null" << endl;
-    cout << endl;
+void printnode(const node* node) {
+    std::cout <<std::endl<< "null->" << node->data << "<-null" << std::endl;
+    std::cout <<std::endl;
 }
-bool static L_Search(node* head) {
+bool L_Search(node* head) {
     int data = 0;
-    cout << "enter element : " << endl;
-    cin>>data;
+    std::cout << "enter element : " << std::endl;
+    std::cin>>data;
     node* temp = head;
     while (temp != nullptr) {
         if (temp->data == data) {
-            cout <<"entry found"<<endl;
+            std::cout <<"entry found"<<std::endl;
             return true;
         }
         temp= temp->next;
     }
     return false;
 }
-static node* LL_Reversal(node*& head) {
+node* LL_Reversal(node*& head) {
     node* temp = head;
     node* prev = nullptr;
     while (temp != nullptr) {
@@ -79,9 +75,9 @@ static node* LL_Reversal(node*& head) {
 void delete_at_pos(node* &head) {
     node* temp = head;
     node* current = head;
-    cout<<  "enter the position of element you want to delete"<<endl;
+    std::cout<<  "enter the position of element you want to delete"<<std::endl;
     int pos = 0;
-    cin >> pos;
+    std::cin >> pos;
     if (pos == 0) {
         head = head->next;
         delete current;
@@ -92,7 +88,7 @@ void delete_at_pos(node* &head) {
         pos--;
     }
     if (temp == nullptr) {
-        cout << "Invalid position" << endl;
+        std::cout << "Invalid position" << std::endl;
         return;
     }
     current = temp->next;
@@ -101,11 +97,11 @@ void delete_at_pos(node* &head) {
 }
 void insert_at_pos(node*& head) {
     int pos;
-    cout << "enter the position of element" << endl;
-    cin >> pos;
+    std::cout << "enter the position of element" << std::endl;
+    std::cin >> pos;
     int data = 0;
-    cout << "enter the data" << endl;
-    cin >> data;
+    std::cout << "enter the data" << std::endl;
+    std::cin >> data;
     node* newnode = new node;
     newnode->data = data;
     if (pos == 0) {
@@ -120,27 +116,10 @@ void insert_at_pos(node*& head) {
         count--;
     }
     if (temp == nullptr) {
-        cout << "Invalid position" << endl;
+        std::cout << "Invalid position" << std::endl;
         delete newnode;
         return;
     }
     newnode->next = temp->next;
     temp->next = newnode;
-}
-int main() {
-    node* head = nullptr;
-    int nodes = 0;
-    cout<< "enter number of linked list nodes: "<<endl;
-    cin>> nodes;
-    head = createlist(nodes,head);            // This part creates the linked list to the head pointer
-    displaylist(head);                        // This part displays the complete linked list
-    const node* middlenode = middle(head);    // This part finds the middle node
-    printnode(middlenode);                    // This part prints the middle node data
-    cout<<L_Search(head)<<endl;               // This part linearly searches the list
-    head = LL_Reversal(head);             // this part reverses a linked list
-    insert_at_pos(head);                  // This part inserts an element at an arbitrary index
-    displaylist(head);
-    delete_at_pos(head);                  // This part deletes an element at any arbitrary index
-    displaylist(head);
-    return 0;
 }
