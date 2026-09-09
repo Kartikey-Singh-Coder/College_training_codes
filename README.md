@@ -5,7 +5,7 @@ A collection of my C programming exercises, algorithms, data structures, and uni
 ## Goals
 
 - Strengthen problem-solving skills
-- Learn modern C programming
+- Learn modern C++/C programming
 - Practice Git and GitHub workflows
 - Build a well-organized archive of my programming journey
 
