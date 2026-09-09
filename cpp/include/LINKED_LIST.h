@@ -16,4 +16,5 @@ void insert_at_pos(node*& head);
 node* hasCycleStart(node* head);
 node* NthNodefromEnd(node* head, int N);
 void mergeList(node*& head1, node*& head2);
+node* SortedDuplicateDeleter(node*& head);
  #endif

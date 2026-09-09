@@ -163,3 +163,15 @@ node* NthNodefromEnd(node* head, int N) {   // related to leetcode 19
     }
     return slow;
 }
+node* SortedDuplicateDeleter(node*& head) {
+    node* temp = head;
+    node* left = head;
+    while (temp != nullptr){
+        while(temp != nullptr && temp->data == left->data){
+            temp = temp->next;
+        }
+        left->next = temp;
+        left = temp;
+    }
+    return head;
+}
