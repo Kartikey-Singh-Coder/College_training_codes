@@ -37,7 +37,13 @@ void displaylist(node* head) {
     }
     std::cout << "null" << std::endl;
 }
-
+int isODDlength(node* head) {                             // returns if a linked list is odd length or even length
+    node* fast = head;
+    while (fast != nullptr && fast->next != nullptr) {
+        fast = fast->next->next;
+    }
+    return fast != nullptr;
+}
 node* middle(node* head) {            // leetcode 876
     node* slow = head;
     node* fast = head;
@@ -146,6 +152,30 @@ node* hasCycleStart(node* head) {
         }
     }
     return nullptr;
+}
+bool isPalindrome(node* head,int isOdd) {
+    node* mid = middle(head);
+    node* temp = head;
+    int stack[50];
+    int top = -1;
+    while (temp != nullptr && temp != mid) {
+        stack[++top] = temp->data;
+        temp = temp->next;
+    }
+    if (isOdd == 1) {
+        temp = mid->next;
+    }
+    else if (isOdd == 0) {
+        temp = mid;
+    }
+    while (temp != nullptr) {
+        if (temp ->data != stack[top]) {
+            return false;
+        }
+        top --;
+        temp = temp->next;
+    }
+    return top == -1;
 }
 node* NthNodefromEnd(node* head, int N) {   // related to leetcode 19
     node* slow = head;

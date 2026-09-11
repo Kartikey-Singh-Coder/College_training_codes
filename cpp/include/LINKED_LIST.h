@@ -7,6 +7,7 @@ typedef struct node {
 node* createnode();
 node* createlist(node* head);
 void displaylist(node* head);
+int isODDlength(node* head);
 node* middle(node* head);
 void printnode(const node* node);
 bool L_Search(node* head);
@@ -17,4 +18,5 @@ node* hasCycleStart(node* head);
 node* NthNodefromEnd(node* head, int N);
 void mergeList(node*& head1, node*& head2);
 node* SortedDuplicateDeleter(node*& head);
+bool isPalindrome(node* head,int isOdd);
  #endif
