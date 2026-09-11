@@ -156,26 +156,28 @@ node* hasCycleStart(node* head) {
 bool isPalindrome(node* head,int isOdd) {
     node* mid = middle(head);
     node* temp = head;
-    int stack[50];
-    int top = -1;
+    node* temp2 = nullptr;
     while (temp != nullptr && temp != mid) {
-        stack[++top] = temp->data;
         temp = temp->next;
     }
     if (isOdd == 1) {
-        temp = mid->next;
+        temp2 = temp->next;
+        temp2= LL_Reversal(temp2);
+        temp = head;
     }
     else if (isOdd == 0) {
-        temp = mid;
+        temp2 = temp;
+        temp = head;
+        temp2 = LL_Reversal(temp2);
     }
-    while (temp != nullptr) {
-        if (temp ->data != stack[top]) {
+    while (temp2 != nullptr) {
+        if (temp->data != temp2->data) {
             return false;
         }
-        top --;
+        temp2 = temp2->next;
         temp = temp->next;
     }
-    return top == -1;
+    return true;
 }
 node* NthNodefromEnd(node* head, int N) {   // related to leetcode 19
     node* slow = head;
