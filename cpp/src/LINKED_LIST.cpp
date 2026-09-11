@@ -85,6 +85,42 @@ node* LL_Reversal(node*& head) {      //leetcode 206
     }
     return prev;
 }
+node* FixedLL_Reversal(node*& head,int left,int right) {
+    if (left == 1) {
+        node* rightstart = head;
+        while (right > 1) {
+            right--;
+            rightstart = rightstart->next;
+        }
+        node* rightrejoin = rightstart->next;
+        rightstart->next = nullptr;
+        node* newHead = LL_Reversal(head);
+        head->next = rightrejoin;
+        return newHead;
+    }
+    node* temp = head;
+    node* leftstart = nullptr;
+    node* rightstart = nullptr;
+    while (left > 2) {
+        left--;
+        temp = temp->next;
+    }
+    node* leftrejoin = temp;
+    leftstart = temp->next;
+    temp = head;
+    while (right > 1) {
+        right--;
+        temp = temp->next;
+    }
+    rightstart = temp;
+    node* temp2 = leftstart;
+    node* rightrejoin = rightstart->next;
+    rightstart->next = nullptr;
+    temp2 = LL_Reversal(temp2);
+    leftrejoin->next = temp2;
+    leftstart->next = rightrejoin;
+    return head;
+}
 void delete_at_pos(node* &head) {
     auto* temp = head;
     auto* current = head;

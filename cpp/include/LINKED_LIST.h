@@ -19,4 +19,5 @@ node* NthNodefromEnd(node* head, int N);
 void mergeList(node*& head1, node*& head2);
 node* SortedDuplicateDeleter(node*& head);
 bool isPalindrome(node* head,int isOdd);
+node* FixedLL_Reversal(node*& head,int left,int right);
  #endif
