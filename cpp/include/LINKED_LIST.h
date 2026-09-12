@@ -20,9 +20,9 @@ void delete_at_pos(node* &head);
 void insert_at_pos(node*& head);
 node* hasCycleStart(node* head);
 node* NthNodefromEnd(node* head, int N);
-void mergeList(node*& head1, node*& head2);
+void mergeSortedList(node*& head1, node*& head2);
 node* ConsecutiveDuplicateDeleter(node*& head);
 bool isPalindrome(node* head,int isOdd);
 node* FixedLL_Reversal(node*& head,int left,int right);
-node* Merge(node* head1, node* head2);
+const node* findMerge(const node* headA, const node* headB);
  #endif

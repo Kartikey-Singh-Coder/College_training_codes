@@ -53,8 +53,7 @@ node* middle(node* head) {            // leetcode 876
     }
     return slow;
 }
-void mergeList(node*& head1, node*& head2) {
-
+void mergeSortedList(node*& head1, node*& head2) {
 }
 void printnode(const node* node) {
     std::cout <<std::endl<< "null->" << node->data << "<-null" << std::endl;
@@ -242,4 +241,35 @@ node* ConsecutiveDuplicateDeleter(node*& head) {
         left = temp;
     }
     return head;
+}
+const node* findMerge(const node* headA, const node* headB) {
+    const node* tempA = headA;
+    const node* tempB = headB;
+    int LengthA = 0;
+    int LengthB = 0;
+    while (tempA != nullptr) {
+        LengthA++;
+        tempA = tempA->next;
+    }
+    while (tempB != nullptr) {
+        LengthB++;
+        tempB = tempB->next;
+    }
+    tempA = headA;
+    tempB = headB;
+    if (LengthA > LengthB) {
+        for (int i = 0;i<LengthA - LengthB;i++) {
+            tempA = tempA->next;
+        }
+    }
+    else {
+        for (int i = 0;i<LengthB - LengthA;i++) {
+            tempB = tempB->next;
+        }
+    }
+    while (tempA != tempB) {
+        tempA = tempA->next;
+        tempB = tempB->next;
+    }
+    return tempA;
 }
