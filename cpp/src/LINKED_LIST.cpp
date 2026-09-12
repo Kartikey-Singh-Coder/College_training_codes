@@ -2,7 +2,7 @@
 #include<iostream>
 #include<LINKED_LIST.h>
 node* createnode() {
-    node* newnode = new node;
+    node* newnode = new node(0);
     int data = 0;
     printf("enter data for this node : ");
     std::cin >> data;
@@ -151,7 +151,7 @@ void insert_at_pos(node*& head) {
     int data = 0;
     std::cout << "enter the data" << std::endl;
     std::cin >> data;
-    auto* newnode = new node;
+    auto* newnode = new node(0);
     newnode->data = data;
     if (pos == 0) {
         newnode->next = head;
@@ -231,7 +231,7 @@ node* NthNodefromEnd(node* head, int N) {   // related to leetcode 19
     }
     return slow;
 }
-node* SortedDuplicateDeleter(node*& head) {
+node* ConsecutiveDuplicateDeleter(node*& head) {
     node* temp = head;
     node* left = head;
     while (temp != nullptr){

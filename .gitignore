@@ -27,3 +27,6 @@ Makefile
 # Debug
 *.ilk
 *.pdb
+
+# hackerrank codes
+Hackerrank_codes.cpp

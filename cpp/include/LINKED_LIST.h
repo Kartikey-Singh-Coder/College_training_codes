@@ -3,7 +3,11 @@
 typedef struct node {
     int data;
     node *next;
-}snode;
+    explicit node(const int value) {
+        data = value;
+        next = nullptr;
+    }
+}node;
 node* createnode();
 node* createlist(node* head);
 void displaylist(node* head);
@@ -17,7 +21,8 @@ void insert_at_pos(node*& head);
 node* hasCycleStart(node* head);
 node* NthNodefromEnd(node* head, int N);
 void mergeList(node*& head1, node*& head2);
-node* SortedDuplicateDeleter(node*& head);
+node* ConsecutiveDuplicateDeleter(node*& head);
 bool isPalindrome(node* head,int isOdd);
 node* FixedLL_Reversal(node*& head,int left,int right);
+node* Merge(node* head1, node* head2);
  #endif
