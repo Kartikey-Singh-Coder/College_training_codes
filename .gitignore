@@ -13,6 +13,9 @@ build.ninja
 compile_commands.json
 Makefile
 
+# Text Files
+*.txt
+
 # Executables
 *.exe
 *.out
