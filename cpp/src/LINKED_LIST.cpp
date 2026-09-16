@@ -1,6 +1,6 @@
 #pragma once
 #include<iostream>
-#include<LINKED_LIST.h>
+#include<LINKED_LIST.hpp>
 node* createnode() {
     node* newnode = new node(0);
     int data = 0;
@@ -53,7 +53,21 @@ node* middle(node* head) {            // leetcode 876
     }
     return slow;
 }
-void mergeSortedList(node*& head1, node*& head2) {
+void mergeSortedLists(node*& head1, node*& head2) {
+    /*const node* temp1 = head1;
+    const node* temp2 = head2;
+    node* headResultant = nullptr;
+    while (temp1 != nullptr && temp2 != nullptr) {
+        const int data1 = temp1->data;
+        const int data2 = temp2->data;
+        node* newnode1 = new node(data1);
+        node* newnode2 = new node(data2);
+        if (data1 > data2 && headResultant == nullptr) {
+            newnode2->next = newnode1;
+            newnode1->next = nullptr;
+            temp2 = temp2->next;
+        }
+    }         */
 }
 void printnode(const node* node) {
     std::cout <<std::endl<< "null->" << node->data << "<-null" << std::endl;
