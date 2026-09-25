@@ -1,39 +1,17 @@
 #include <iostream>
-#include <LINEAR_QUEUE.hpp>
+#include <SORTING_ALGORITHM.hpp>
 int main() {
-    queue q(5);
-
-    // Enqueue elements
-    std::cout << "Enqueuing elements:\n";
-
-    q.enqueue(10);
-    q.enqueue(20);
-    q.enqueue(30);
-    q.enqueue(40);
-    q.enqueue(50);
-
-    std::cout << "Queue: ";
-    q.display();
-
-    // Test overflow
-    std::cout << "\nTrying to enqueue 60:\n";
-    q.enqueue(60);
-
-    // Dequeue elements
-    std::cout << "\nDequeuing elements:\n";
-
-    q.dequeue();
-    q.dequeue();
-
-    std::cout << "Queue: ";
-    q.display();
-
-    // Add another element
-    std::cout << "\nEnqueuing 60:\n";
-    q.enqueue(60);
-
-    std::cout << "Queue: ";
-    q.display();
-
+    int n;
+    std::cout<<"enter the number of elements you want to enter"<<std::endl;
+    std::cin >> n;
+    std::vector<int> arr(n);
+    for(int i=0;i<n;i++) {
+        std::cout<<"enter the element you want to enter"<<std::endl;
+        std::cin >> arr[i];
+    }
+    mergesort(arr,0,n-1);
+    for(int i=0;i<n;i++) {
+        std::cout<<arr[i]<<" ";
+    }
     return 0;
 }
