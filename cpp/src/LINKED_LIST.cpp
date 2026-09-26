@@ -53,21 +53,30 @@ node* middle(node* head) {            // leetcode 876
     }
     return slow;
 }
-void mergeSortedLists(node*& head1, node*& head2) {
-    /*const node* temp1 = head1;
-    const node* temp2 = head2;
-    node* headResultant = nullptr;
+node* mergeTwoLists(node* list1, node* list2) {
+    node* temp1 = list1;
+    node* temp2 = list2;
+    node dummy(0);
+    node* current = &dummy;
+    if (temp1 == nullptr) {
+        return temp2;
+    }
+    if (temp2 == nullptr) {
+        return temp1;
+    }
     while (temp1 != nullptr && temp2 != nullptr) {
-        const int data1 = temp1->data;
-        const int data2 = temp2->data;
-        node* newnode1 = new node(data1);
-        node* newnode2 = new node(data2);
-        if (data1 > data2 && headResultant == nullptr) {
-            newnode2->next = newnode1;
-            newnode1->next = nullptr;
+        if (temp1->data >= temp2->data) {
+            current->next = temp2;
             temp2 = temp2->next;
         }
-    }         */
+        else {
+            current->next = temp1;
+            temp1 = temp1->next;
+        }
+        current = current->next;
+    }
+    current->next = temp1 ? temp1 : temp2;
+    return dummy.next;
 }
 void printnode(const node* node) {
     std::cout <<std::endl<< "null->" << node->data << "<-null" << std::endl;
