@@ -14,7 +14,7 @@ compile_commands.json
 Makefile
 
 # Text Files
-*.txt
+CSEP_Hackerrank_questions.txt
 
 # Executables
 *.exe
