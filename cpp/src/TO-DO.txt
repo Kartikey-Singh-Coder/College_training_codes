@@ -1,0 +1,132 @@
+C++ DSA LEARNING TODO
+=====================
+
+PHASE 1 — RECURSION
+-------------------
+[x] Factorial
+[x] Sum till N
+[x] Recursive string reversal
+[x] Recursive binary search
+[x] Recursive linked-list traversal
+
+Concepts:
+[x] Base cases
+[x] Recursive cases
+[x] Reducing problem size
+[x] Call stack
+[x] Returning values through recursion
+[x] Passing by reference
+[x] Recursive traversal
+
+
+PHASE 2 — RECURSION WITH CHOICES
+--------------------------------
+[ ] Understand recursive decision trees
+[ ] Understand branching recursion
+[ ] Choose → recurse
+[ ] Generate subsets
+[ ] Generate permutations
+[ ] Generate combinations
+[ ] Understand recursion trees
+
+
+PHASE 3 — BACKTRACKING
+----------------------
+[ ] Understand the backtracking pattern
+[ ] Choose
+[ ] Recurse
+[ ] Undo the choice
+[ ] Subsets
+[ ] Permutations
+[ ] Combinations
+[ ] Combination Sum
+[ ] Understand state restoration
+
+
+PHASE 4 — TREES
+---------------
+[ ] Understand tree terminology
+[ ] Create a binary tree manually
+[ ] Parent / child relationships
+[ ] Leaf nodes
+[ ] Height / depth
+[ ] Preorder traversal
+[ ] Inorder traversal
+[ ] Postorder traversal
+[ ] Recursive tree traversal
+[ ] Level-order traversal
+
+
+PHASE 5 — DFS
+-------------
+[ ] Understand DFS conceptually
+[ ] DFS on binary trees
+[ ] DFS using recursion
+[ ] Understand traversal order
+[ ] Understand visited state
+[ ] DFS on a grid
+[ ] Four-directional movement
+[ ] Marking visited cells
+[ ] DFS on graphs
+
+
+PHASE 6 — BFS
+-------------
+[ ] Understand BFS conceptually
+[ ] Queue-based traversal
+[ ] BFS on binary trees
+[ ] Level-order traversal
+[ ] BFS on a grid
+[ ] Distance / level tracking
+[ ] Understand visited state
+[ ] BFS on graphs
+
+
+PHASE 7 — GRAPHS
+----------------
+[ ] Vertices and edges
+[ ] Directed graphs
+[ ] Undirected graphs
+[ ] Weighted graphs
+[ ] Adjacency matrix
+[ ] Adjacency list
+[ ] Build a graph manually
+[ ] DFS on graphs
+[ ] BFS on graphs
+[ ] Connected components
+[ ] Cycles
+
+
+PHASE 8 — SHORTEST PATH
+-----------------------
+[ ] Understand shortest-path problem
+[ ] Dijkstra's algorithm
+[ ] Priority queue in Dijkstra
+[ ] Negative-weight edges
+[ ] Bellman-Ford
+[ ] Floyd-Warshall
+[ ] All-pairs shortest paths
+[ ] Compare shortest-path algorithms
+
+
+PHASE 9 — ADVANCED GRAPHS
+-------------------------
+[ ] Topological sorting
+[ ] Minimum spanning tree
+[ ] Prim's algorithm
+[ ] Kruskal's algorithm
+[ ] Disjoint Set Union (DSU)
+[ ] Advanced graph concepts
+
+
+PROGRESSION
+-----------
+[x] Recursion
+[ ] Recursion with choices
+[ ] Backtracking
+[ ] Trees
+[ ] DFS
+[ ] BFS
+[ ] Graphs
+[ ] Shortest Path
+[ ] Advanced Graphs
