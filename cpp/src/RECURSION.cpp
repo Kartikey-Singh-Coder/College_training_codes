@@ -1,0 +1,48 @@
+#include <string>
+#include <iostream>
+#include<LINKED_LIST.hpp>
+//factorial of n
+int factorial(int n) {
+    if (n == 0 || n == 1)
+        return 1;
+    return n * factorial(n - 1);
+}
+//sum till n
+int sumtillN(int n) {
+    if (n == 0) {
+        return 0;
+    }
+    int sum = 0;
+    sum = n + sumtillN(n - 1);
+    return sum;
+}
+// reverse a string using recursion
+void recursiveStringReversal(std::string &s,const int start,const int end) {
+    if (start >= end) {
+        return;
+    }
+    std::swap(s[start], s[end]);
+    recursiveStringReversal(s, start + 1, end - 1);
+}
+// binary search using recursion
+int recursiveBinarySearch(int low,int high,const int* array,const int target) {
+    if (high < low) {
+        return -1;
+    }
+    int mid = low + (high - low) / 2;
+    if (array[mid] == target) {
+        return mid;
+    }
+    if (array[mid] > target) {
+        return recursiveBinarySearch(low, mid - 1, array, target);
+    }
+    return recursiveBinarySearch(mid + 1, high, array, target);
+}
+// linked list traversal using recursion
+void recursiveLinkedListTraversal(node* traveller) {
+    if (traveller == nullptr) {
+        return;
+    }
+    std::cout << traveller->data << std::endl;
+    recursiveLinkedListTraversal(traveller->next);
+}
