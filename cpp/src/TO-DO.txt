@@ -24,7 +24,7 @@ PHASE 2 — RECURSION WITH CHOICES
 [] Understand recursive decision trees
 [x] Understand branching recursion
 [x] Choose → recurse
-[] Generate subsets
+[x] Generate subsets
 [ ] Generate permutations
 [ ] Generate combinations
 [ ] Understand recursion trees

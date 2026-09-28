@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include<LINKED_LIST.hpp>
+#include <vector>
 //factorial of n
 int factorial(int n) {
     if (n == 0 || n == 1)
@@ -63,4 +64,18 @@ void subsequenceString(const std::string sample,std::string state,const int posi
     char i = sample[position];
     subsequenceString(sample,state,position + 1);
     subsequenceString(sample,state + i,position + 1);
+}
+void generateSubsets(const std::vector<int> &sample,std::vector<int> state,const int position) {
+    if (position == sample.size()) {
+        std::cout<< "["<< " ";
+        for (const int i : state) {
+            std::cout << i << " ";
+        }
+        std::cout << "]" << std::endl;
+        return;
+    }
+    const int choice = sample[position];
+    generateSubsets(sample,state,position + 1);
+    state.push_back(choice);
+    generateSubsets(sample,state,position + 1);
 }
