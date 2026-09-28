@@ -1,5 +1,5 @@
 #include<RECURSION.hpp>
 int main() {
-    binaryString(5,"");
+    subsequenceString("abc","",0);
     return 0;
 }
