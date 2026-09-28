@@ -8,12 +8,12 @@ int factorial(int n) {
     return n * factorial(n - 1);
 }
 //sum till n
-int sumtillN(int n) {
+int sumTillN(int n) {
     if (n == 0) {
         return 0;
     }
     int sum = 0;
-    sum = n + sumtillN(n - 1);
+    sum = n + sumTillN(n - 1);
     return sum;
 }
 // reverse a string using recursion
@@ -39,10 +39,19 @@ int recursiveBinarySearch(int low,int high,const int* array,const int target) {
     return recursiveBinarySearch(mid + 1, high, array, target);
 }
 // linked list traversal using recursion
-void recursiveLinkedListTraversal(node* traveller) {
+void recursiveLinkedListTraversal(const node* traveller) {
     if (traveller == nullptr) {
         return;
     }
     std::cout << traveller->data << std::endl;
     recursiveLinkedListTraversal(traveller->next);
+}
+// binary string of length n
+void binaryString(const int n,std::string state) {
+    if ( state.size() == n ) {
+        std::cout << state << std::endl;
+        return;
+    }
+    binaryString(n,state + "0");
+    binaryString(n,state + "1");
 }
