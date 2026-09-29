@@ -4,6 +4,12 @@
 
 # Build directories
 cmake-build-*/
+# Docs
+cpp/docs/*.js
+cpp/docs/*.html
+cpp/docs/*.md
+cpp/docs/*.css
+cpp/docs/*.txt
 
 # CMake generated
 CMakeFiles/
