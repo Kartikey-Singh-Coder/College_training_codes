@@ -56,6 +56,7 @@ void binaryString(const int n,std::string state) {
     binaryString(n,state + "0");
     binaryString(n,state + "1");
 }
+// subsequences of a string
 void subsequenceString(const std::string sample,std::string state,const int position) {
     if (position == sample.size()) {
         std::cout << state << std::endl;
@@ -65,6 +66,7 @@ void subsequenceString(const std::string sample,std::string state,const int posi
     subsequenceString(sample,state,position + 1);
     subsequenceString(sample,state + i,position + 1);
 }
+// subsets of a vector
 void generateSubsets(const std::vector<int> &sample,std::vector<int> state,const int position) {
     if (position == sample.size()) {
         std::cout<< "["<< " ";
