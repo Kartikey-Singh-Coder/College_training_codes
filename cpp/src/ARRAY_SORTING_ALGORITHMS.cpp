@@ -50,18 +50,19 @@ void mergesort(std::vector<int> &arr,const int low,const int high) {
     mergesort(arr,mid+1,high);
     mergeVector(arr,low,mid,high);
 }
-void quicksort(std::vector<int> &arr,const int low,const int high) {
+void quicksort(std::vector<int> &arr,const long long low,const long long high) {
     if ( low >= high ) return;
     int pivot = arr[low];
-    int i = low;
-    int j = high;
+    long long i = low + 1;
+    long long j = high;
     while ( i <= j ) {
-        while (i < j && arr[i] <=pivot) i++;
-        while ( i < j & arr[j] >= pivot) j--;
+        while (i <= high && arr[i] <= pivot) i++;
+        while (j >= low && arr[j] > pivot) j--;
         if (i < j) {
             std::swap(arr[i],arr[j]);
         }
     }
+    std::swap(arr[low],arr[j]);
     quicksort(arr,low,j-1);
     quicksort(arr,j+1,high);
 }
