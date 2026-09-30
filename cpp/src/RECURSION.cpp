@@ -96,3 +96,14 @@ void generateSubsetsandPrint(const std::vector<int> &sample,std::vector<int> sta
     state.push_back(choice);
     generateSubsetsandPrint(sample,state,position + 1,result);
 }
+void subsequenceStringLikeK(const std::string sample,std::string state,const int position,const int k) {
+    if (position == sample.size() && state.size() == k) {
+        std::cout<< "{"<< " ";
+        std::cout << state << std::endl;
+        std::cout<< "}"<< std::endl;
+        return;
+    }
+    char i = sample[position];
+    subsequenceString(sample,state,position + 1);
+    subsequenceString(sample,state + i,position + 1);
+}
