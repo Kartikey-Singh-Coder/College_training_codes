@@ -50,7 +50,9 @@ void recursiveLinkedListTraversal(const node* traveller) {
 // binary string of length n
 void binaryString(const int n,std::string state) {
     if ( state.size() == n ) {
+        std::cout<< "["<< " ";
         std::cout << state << std::endl;
+        std::cout<< "]"<< std::endl;
         return;
     }
     binaryString(n,state + "0");
@@ -59,7 +61,9 @@ void binaryString(const int n,std::string state) {
 // subsequences of a string
 void subsequenceString(const std::string sample,std::string state,const int position) {
     if (position == sample.size()) {
+        std::cout<< "{"<< " ";
         std::cout << state << std::endl;
+        std::cout<< "}"<< std::endl;
         return;
     }
     char i = sample[position];
@@ -80,4 +84,15 @@ void generateSubsets(const std::vector<int> &sample,std::vector<int> state,const
     generateSubsets(sample,state,position + 1);
     state.push_back(choice);
     generateSubsets(sample,state,position + 1);
+}
+// subsets of a vector returning
+void generateSubsetsandPrint(const std::vector<int> &sample,std::vector<int> state,const int position,std::vector<std::vector<int>>& result) {
+    if (position == sample.size()) {
+        result.push_back(state);
+        return;
+    }
+    const int choice = sample[position];
+    generateSubsetsandPrint(sample,state,position + 1,result);
+    state.push_back(choice);
+    generateSubsetsandPrint(sample,state,position + 1,result);
 }

@@ -10,3 +10,4 @@ void recursiveLinkedListTraversal(node* traveller);
 void binaryString(int n,std::string state);
 void subsequenceString(std::string sample,std::string state,int position);
 void generateSubsets(const std::vector<int>&sample,std::vector<int> state,int position);
+void generateSubsetsandPrint(const std::vector<int> &sample,std::vector<int> state,const int position,std::vector<std::vector<int>>& result);
