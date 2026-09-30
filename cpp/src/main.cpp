@@ -1,10 +1,14 @@
 #include <iostream>
-#include<SORTING_ALGORITHM.hpp>
+#include<RECURSION.hpp>
 int main() {
-    std::vector<int> v{3,4,2,6,5};
-    quicksort(v,0,v.size()-1);
-    for(int i=0;i<v.size();i++) {
-        std::cout<<v[i]<<" ";
+    std::vector<int> v{1,2,3,4,5};
+    std::vector<std::vector<int>> result;
+    subvectorsWithSumK(v,{},result,0,7);
+    for (auto & i : result) {
+        for (int j : i) {
+            std::cout << j << " ";
+        }
+        std::cout << std::endl;
     }
     return 0;
 }

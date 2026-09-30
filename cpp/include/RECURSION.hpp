@@ -13,3 +13,4 @@ void generateSubsets(const std::vector<int>&sample,std::vector<int> state,int po
 void generateSubsetsandPrint(const std::vector<int> &sample,std::vector<int> state,const int position,std::vector<std::vector<int>>& result);
 void generateSubsetsandPrintLikeK(const std::vector<int> &sample,std::vector<int> state,const int position,std::vector<std::vector<int>>& result,const int k);
 void subsequenceStringLikeK(const std::string sample,std::string state,const int position,const int k);
+void subvectorsWithSumK(const std::vector<int> sample,std::vector<int> state,std::vector<std::vector<int>>& result,const int position,const int target);

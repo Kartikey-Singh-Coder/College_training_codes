@@ -97,23 +97,47 @@ void generateSubsetsandPrint(const std::vector<int> &sample,std::vector<int> sta
     generateSubsetsandPrint(sample,state,position + 1,result);
 }
 void subsequenceStringLikeK(const std::string sample,std::string state,const int position,const int k) {
-    if (position == sample.size() && state.size() == k) {
-        std::cout<< "{"<< " ";
-        std::cout << state << std::endl;
-        std::cout<< "}"<< std::endl;
+    if (position == sample.size()) {
+        if ( state.size() == k ) {
+            std::cout<< "{"<< " ";
+            std::cout << state << " ";
+            std::cout<< "}"<< std::endl;
+        }
         return;
     }
     char i = sample[position];
-    subsequenceString(sample,state,position + 1);
-    subsequenceString(sample,state + i,position + 1);
+    subsequenceStringLikeK(sample,state,position + 1,k);
+    subsequenceStringLikeK(sample,state + i,position + 1,k);
 }
 void generateSubsetsandPrintLikeK(const std::vector<int> &sample,std::vector<int> state,const int position,std::vector<std::vector<int>>& result,const int k) {
-    if (position == sample.size() && state.size() == k) {
-        result.push_back(state);
+    if (position == sample.size()) {
+        if (state.size() == k ) {
+            result.push_back(state);
+            return;
+        }
         return;
     }
     const int choice = sample[position];
-    generateSubsetsandPrint(sample,state,position + 1,result);
+    generateSubsetsandPrintLikeK(sample,state,position + 1,result,k);
     state.push_back(choice);
-    generateSubsetsandPrint(sample,state,position + 1,result);
+    generateSubsetsandPrintLikeK(sample,state,position + 1,result,k);
+}
+int vectorSum(std::vector<int> &result) {
+    int sum = 0;
+    for (int i: result) {
+        sum+=i;
+    }
+    return sum;
+}
+void subvectorsWithSumK(const std::vector<int> sample,std::vector<int> state,std::vector<std::vector<int>>& result,const int position,const int target) {
+    if ( position == sample.size()) {
+        if (vectorSum(state) == target) {
+            result.push_back(state);
+        }
+        return;
+    }
+    const int choice = sample[position];
+    subvectorsWithSumK(sample,state,result,position + 1,target);
+    state.push_back(choice);
+    subvectorsWithSumK(sample,state,result,position + 1,target);
 }
