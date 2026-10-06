@@ -14,5 +14,6 @@ int main() {
     std::cout << CountLeaves(root) << "\n";
     std::cout << MaxValue(root) << "\n";
     std::cout << MinValue(root) << "\n";
+    std::cout << SingleChildNodes(root) << "\n";
     delete root;
 }
