@@ -20,4 +20,5 @@ int SumNodes(const TreeNode* root);
 int CountLeaves(const TreeNode* root);
 int MaxValue(const TreeNode* root);
 int MinValue(const TreeNode* root);
+bool HasTarget(const TreeNode* root,int target);
 

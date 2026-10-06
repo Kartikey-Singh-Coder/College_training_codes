@@ -78,3 +78,10 @@ int MinValue(const TreeNode* root) {
     const int RightMin = MinValue(root->right);
     return std::min(root->val,std::min(LeftMin,RightMin));
 }
+bool HasTarget(const TreeNode* root ,const int target) {
+    if (root == nullptr) return false;
+    if (root->val == target) return true;
+    const bool left = HasTarget(root->left,target);
+    const bool right = HasTarget(root->right,target);
+    return left || right;
+}
