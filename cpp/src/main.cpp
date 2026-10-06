@@ -1,14 +1,13 @@
 #include <iostream>
-#include<RECURSION.hpp>
+#include<TREE.hpp>
 int main() {
-    std::vector<int> v{1,3,3};
-    std::vector<std::vector<int>> result;
-    generateSubsetsandPrint(v,{},0,result);
-    for(int i=0;i<result.size();i++) {
-        for(int j=0;j<result[i].size();j++) {
-            std::cout<<result[i][j]<<" ";
-        }
-        std::cout<<std::endl;
-    }
-    return 0;
+    auto* root = new TreeNode(10);
+    root->left = new TreeNode(20);
+    root->right = new TreeNode(30);
+    root->left->left = new TreeNode(40);
+    root->left->right = new TreeNode(50);
+    root->right->left = new TreeNode(60);
+    root->right->right = new TreeNode(70);
+    InOrderTraversal(root);
+    delete root;
 }

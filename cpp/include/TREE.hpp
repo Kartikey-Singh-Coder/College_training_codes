@@ -9,8 +9,8 @@ typedef struct TreeNode {
         delete right;
     }
 }TreeNode;
-void PreOrderTraversal(TreeNode* root);
-void InOrderTraversal(TreeNode* root);
-void PostOrderTraversal(TreeNode* root);
-void LevelOrderTraversal(TreeNode* root);
+void PreOrderTraversal(const TreeNode* root);
+void InOrderTraversal(const TreeNode* root);
+void PostOrderTraversal(const TreeNode* root);
+void LevelOrderTraversal(const TreeNode* root);
 
