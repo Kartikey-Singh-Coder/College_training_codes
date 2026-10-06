@@ -85,3 +85,12 @@ bool HasTarget(const TreeNode* root ,const int target) {
     const bool right = HasTarget(root->right,target);
     return left || right;
 }
+int SingleChildNodes(const TreeNode* root) {
+    if (root == nullptr) return 0;
+    int current = 0;
+    if (root->left != nullptr && root->right != nullptr) || (root->left == nullptr && root->right == nullptr){
+        current = 1;
+    }
+
+    return current + SingleChildNodes(root->left) + SingleChildNodes(root->right);
+}
