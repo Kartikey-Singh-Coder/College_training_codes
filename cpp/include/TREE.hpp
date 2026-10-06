@@ -12,5 +12,5 @@ typedef struct TreeNode {
 void PreOrderTraversal(const TreeNode* root);
 void InOrderTraversal(const TreeNode* root);
 void PostOrderTraversal(const TreeNode* root);
-void LevelOrderTraversal(const TreeNode* root);
+void LevelOrderTraversal(TreeNode* root);
 

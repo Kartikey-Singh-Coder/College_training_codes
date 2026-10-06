@@ -1,12 +1,28 @@
 #include <iostream>
 #include <TREE.hpp>
+#include <queue>
 void PreOrderTraversal(const TreeNode* root) {
     if (root == nullptr) return;
     std::cout << root->val << "\n";
     PreOrderTraversal(root->left);
     PreOrderTraversal(root->right);
 }
-void LevelOrderTraversal(const TreeNode* root) {}
+void LevelOrderTraversal(TreeNode* root) {
+    if (root == nullptr) return;
+    std::queue<TreeNode*> LevelOrderQueue;
+    LevelOrderQueue.push(root);
+    while (!LevelOrderQueue.empty()) {
+        TreeNode* current = LevelOrderQueue.front();
+        LevelOrderQueue.pop();
+        std::cout << current->val << "\n";
+        if (current->left != nullptr) {
+            LevelOrderQueue.push(current->left);
+        }
+        if (current->right != nullptr) {
+            LevelOrderQueue.push(current->right);
+        }
+    }
+}
 void PostOrderTraversal(const TreeNode* root) {
     if (root == nullptr) return;
     PostOrderTraversal(root->left);

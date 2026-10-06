@@ -8,6 +8,6 @@ int main() {
     root->left->right = new TreeNode(50);
     root->right->left = new TreeNode(60);
     root->right->right = new TreeNode(70);
-    InOrderTraversal(root);
+    LevelOrderTraversal(root);
     delete root;
 }
