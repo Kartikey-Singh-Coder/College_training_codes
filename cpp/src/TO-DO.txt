@@ -27,7 +27,7 @@ PHASE 2 — RECURSION WITH CHOICES
 [x] Generate subsets
 [ ] Generate permutations
 [ ] Generate combinations
-[ ] Understand recursion trees
+[x] Understand recursion trees
 
 
 PHASE 3 — BACKTRACKING
@@ -49,7 +49,7 @@ PHASE 4 — TREES
 [x] Create a binary tree manually
 [x] Parent / child relationships
 [x] Leaf nodes
-[ ] Height / depth
+[x] Height / depth
 [x] Preorder traversal
 [x] Inorder traversal
 [x] Postorder traversal
@@ -122,9 +122,9 @@ PHASE 9 — ADVANCED GRAPHS
 PROGRESSION
 -----------
 [x] Recursion
-[ ] Recursion with choices
-[ ] Backtracking
-[ ] Trees
+[x] Recursion with choices
+[-] Backtracking
+[x] Trees
 [ ] DFS
 [ ] BFS
 [ ] Graphs
