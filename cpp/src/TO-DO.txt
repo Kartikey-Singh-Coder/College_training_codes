@@ -46,15 +46,15 @@ PHASE 3 — BACKTRACKING
 PHASE 4 — TREES
 ---------------
 [x] Understand tree terminology
-[ ] Create a binary tree manually
-[ ] Parent / child relationships
-[ ] Leaf nodes
+[x] Create a binary tree manually
+[x] Parent / child relationships
+[x] Leaf nodes
 [ ] Height / depth
-[ ] Preorder traversal
-[ ] Inorder traversal
-[ ] Postorder traversal
-[ ] Recursive tree traversal
-[ ] Level-order traversal
+[x] Preorder traversal
+[x] Inorder traversal
+[x] Postorder traversal
+[x] Recursive tree traversal
+[x] Level-order traversal
 
 
 PHASE 5 — DFS

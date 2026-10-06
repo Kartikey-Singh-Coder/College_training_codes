@@ -9,8 +9,10 @@ typedef struct TreeNode {
         delete right;
     }
 }TreeNode;
+TreeNode* createTree();
 void PreOrderTraversal(const TreeNode* root);
 void InOrderTraversal(const TreeNode* root);
 void PostOrderTraversal(const TreeNode* root);
 void LevelOrderTraversal(TreeNode* root);
+int TreeHeight(const TreeNode* root);
 

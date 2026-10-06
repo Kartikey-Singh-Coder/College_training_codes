@@ -1,6 +1,15 @@
 #include <iostream>
 #include <TREE.hpp>
 #include <queue>
+TreeNode* createTree() {
+    int val;
+    std::cin >> val;
+    if (val == -1) return nullptr;
+    auto* root = new TreeNode(val);
+    root->left = createTree();
+    root->right = createTree();
+    return root;
+}
 void PreOrderTraversal(const TreeNode* root) {
     if (root == nullptr) return;
     std::cout << root->val << "\n";
@@ -34,4 +43,10 @@ void InOrderTraversal(const TreeNode* root) {
     InOrderTraversal(root->left);
     std::cout << root->val << "\n";
     InOrderTraversal(root->right);
+}
+int TreeHeight(const TreeNode* root) {
+    if (root == nullptr) return -1;
+    const int lh = TreeHeight(root->left);
+    const int rh = TreeHeight(root->right);
+    return std::max(lh, rh) + 1;
 }
