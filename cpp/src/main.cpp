@@ -15,5 +15,6 @@ int main() {
     std::cout << MaxValue(root) << "\n";
     std::cout << MinValue(root) << "\n";
     std::cout << SingleChildNodes(root) << "\n";
+    std::cout << TwoChildNodes(root) << "\n";
     delete root;
 }

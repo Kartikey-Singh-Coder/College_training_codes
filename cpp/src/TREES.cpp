@@ -93,3 +93,11 @@ int SingleChildNodes(const TreeNode* root) {
     }
     return current + SingleChildNodes(root->left) + SingleChildNodes(root->right);
 }
+int TwoChildNodes(const TreeNode* root) {
+    if (root == nullptr) return 0;
+    int current = 0;
+    if (root->left != nullptr && root->right != nullptr) {
+        current = 1;
+    }
+    return current + TwoChildNodes(root->left) + TwoChildNodes(root->right);
+}
