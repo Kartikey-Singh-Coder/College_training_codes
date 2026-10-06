@@ -15,4 +15,9 @@ void InOrderTraversal(const TreeNode* root);
 void PostOrderTraversal(const TreeNode* root);
 void LevelOrderTraversal(TreeNode* root);
 int TreeHeight(const TreeNode* root);
+int CountNodes(const TreeNode* root);
+int SumNodes(const TreeNode* root);
+int CountLeaves(const TreeNode* root);
+int MaxValue(const TreeNode* root);
+int MinValue(const TreeNode* root);
 
