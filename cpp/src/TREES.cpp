@@ -112,3 +112,13 @@ void MirrorTree(TreeNode* root) {
     MirrorTree(root->left);
     MirrorTree(root->right);
 }
+bool IsMirror(const TreeNode* left, const TreeNode* right) {
+    if (left == nullptr && right == nullptr) return true;
+    if (left == nullptr || right == nullptr) return false;
+    if (left->val != right->val) return false;
+    return IsMirror(left->left, right->right) && IsMirror(right->left, left->right);;
+}
+bool IsSymmetric(const TreeNode* root) {
+    if (root == nullptr) return true;
+    return IsMirror(root->left, root->right);
+}
