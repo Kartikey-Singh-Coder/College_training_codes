@@ -13,7 +13,7 @@ TreeNode* createTree() {
 }
 void PreOrderTraversal(const TreeNode* root) {
     if (root == nullptr) return;
-    std::cout << root->val << "\n";
+    std::cout << root->val << " ";
     PreOrderTraversal(root->left);
     PreOrderTraversal(root->right);
 }
@@ -24,7 +24,7 @@ void LevelOrderTraversal(TreeNode* root) {
     while (!LevelOrderQueue.empty()) {
         TreeNode* current = LevelOrderQueue.front();
         LevelOrderQueue.pop();
-        std::cout << current->val << "\n";
+        std::cout << current->val << " ";
         if (current->left != nullptr) {
             LevelOrderQueue.push(current->left);
         }
@@ -37,12 +37,12 @@ void PostOrderTraversal(const TreeNode* root) {
     if (root == nullptr) return;
     PostOrderTraversal(root->left);
     PostOrderTraversal(root->right);
-    std::cout << root->val << "\n";
+    std::cout << root->val << " ";
 }
 void InOrderTraversal(const TreeNode* root) {
     if (root == nullptr) return;
     InOrderTraversal(root->left);
-    std::cout << root->val << "\n";
+    std::cout << root->val << " ";
     InOrderTraversal(root->right);
 }
 int TreeHeight(const TreeNode* root) {
@@ -105,4 +105,10 @@ bool SameTree(const TreeNode* rootA, const TreeNode* rootB) {
     if (rootA == nullptr && rootB == nullptr) return true;
     if (rootA == nullptr || rootB == nullptr) return false;
     return ((rootA->val == rootB->val) && SameTree(rootA->left, rootB->left) && SameTree(rootA->right, rootB->right));
+}
+void MirrorTree(TreeNode* root) {
+    if (root == nullptr) return;
+    std::swap(root->left, root->right);
+    MirrorTree(root->left);
+    MirrorTree(root->right);
 }

@@ -16,5 +16,7 @@ int main() {
     std::cout << MinValue(root) << "\n";
     std::cout << SingleChildNodes(root) << "\n";
     std::cout << TwoChildNodes(root) << "\n";
+    MirrorTree(root);
+    InOrderTraversal(root);
     delete root;
 }
