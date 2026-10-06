@@ -21,7 +21,7 @@ Concepts:
 
 PHASE 2 — RECURSION WITH CHOICES
 --------------------------------
-[] Understand recursive decision trees
+[x] Understand recursive decision trees
 [x] Understand branching recursion
 [x] Choose → recurse
 [x] Generate subsets
@@ -45,7 +45,7 @@ PHASE 3 — BACKTRACKING
 
 PHASE 4 — TREES
 ---------------
-[ ] Understand tree terminology
+[x] Understand tree terminology
 [ ] Create a binary tree manually
 [ ] Parent / child relationships
 [ ] Leaf nodes

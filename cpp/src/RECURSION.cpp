@@ -141,3 +141,5 @@ void subvectorsWithSumK(const std::vector<int> sample,std::vector<int> state,std
     state.push_back(choice);
     subvectorsWithSumK(sample,state,result,position + 1,target);
 }
+void generatePermutations(std::vector<int> &nums) {
+}
