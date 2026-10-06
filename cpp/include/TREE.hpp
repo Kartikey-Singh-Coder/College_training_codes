@@ -23,3 +23,4 @@ int MinValue(const TreeNode* root);
 bool HasTarget(const TreeNode* root,int target);
 int SingleChildNodes(const TreeNode* root);
 int TwoChildNodes(const TreeNode* root);
+bool SameTree(const TreeNode* rootA, const TreeNode* rootB);

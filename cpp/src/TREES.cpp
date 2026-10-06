@@ -101,3 +101,8 @@ int TwoChildNodes(const TreeNode* root) {
     }
     return current + TwoChildNodes(root->left) + TwoChildNodes(root->right);
 }
+bool SameTree(const TreeNode* rootA, const TreeNode* rootB) {
+    if (rootA == nullptr && rootB == nullptr) return true;
+    if (rootA == nullptr || rootB == nullptr) return false;
+    return ((rootA->val == rootB->val) && SameTree(rootA->left, rootB->left) && SameTree(rootA->right, rootB->right));
+}
