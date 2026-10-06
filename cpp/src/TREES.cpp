@@ -66,3 +66,15 @@ int CountLeaves(const TreeNode* root) {
     if (root->left == nullptr && root->right == nullptr) return 1;
     return CountLeaves(root->left) + CountLeaves(root->right);
 }
+int MaxValue(const TreeNode* root) {
+    if (root == nullptr) return std::numeric_limits<int>::min();
+    const int LeftMax = MaxValue(root->left);
+    const int RightMax = MaxValue(root->right);
+    return std::max(root->val,std::max(LeftMax,RightMax));
+}
+int MinValue(const TreeNode* root) {
+    if (root == nullptr) return std::numeric_limits<int>::max();
+    const int LeftMin = MinValue(root->left);
+    const int RightMin = MinValue(root->right);
+    return std::min(root->val,std::min(LeftMin,RightMin));
+}
