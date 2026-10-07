@@ -18,5 +18,8 @@ int main() {
     std::cout << TwoChildNodes(root) << "\n";
     MirrorTree(root);
     InOrderTraversal(root);
+    int count = 0;
+    NodesAtLevelKth(root,3,count);
+    std::cout << count << "\n";
     delete root;
 }

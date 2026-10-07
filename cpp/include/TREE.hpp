@@ -26,4 +26,4 @@ int TwoChildNodes(const TreeNode* root);
 bool SameTree(const TreeNode* rootA, const TreeNode* rootB);
 void MirrorTree(TreeNode* root);
 bool IsSymmetric(TreeNode* root);
-void NodesAtLevelKth(const TreeNode* root, int k);
+void NodesAtLevelKth(const TreeNode* root,int k,int &count);
