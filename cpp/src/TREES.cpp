@@ -122,3 +122,14 @@ bool IsSymmetric(const TreeNode* root) {
     if (root == nullptr) return true;
     return IsMirror(root->left, root->right);
 }
+void NodesAtLevelKth(const TreeNode* root,int k,int &Count) {
+    if (root == nullptr) {
+        return;
+    }
+    if (k == 1) {
+        Count++;
+        return;
+    }
+    NodesAtLevelKth(root->left,k - 1,Count);
+    NodesAtLevelKth(root->right,k - 1,Count);
+}
