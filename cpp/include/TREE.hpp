@@ -29,4 +29,4 @@ bool IsSymmetric(TreeNode* root);
 void NodesAtLevelKth(const TreeNode* root,int k,int &count);
 TreeNode* LeftTreeRotater(TreeNode* root);
 TreeNode* RightTreeRotater(TreeNode* root);
-TreeNode* TreeRotater(TreeNode* root,const char direction) ;
+TreeNode* TreeRotater(TreeNode* root,char direction) ;
