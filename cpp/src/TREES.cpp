@@ -133,3 +133,14 @@ void NodesAtLevelKth(const TreeNode* root,const int k,int &Count) {
     NodesAtLevelKth(root->left,k - 1,Count);
     NodesAtLevelKth(root->right,k - 1,Count);
 }
+TreeNode* LeftTreeRotater(TreeNode* root) {
+    return root;
+}
+TreeNode* RightTreeRotater(TreeNode* root) {
+    return root;
+}
+TreeNode* TreeRotater(TreeNode* root,const char direction) {
+    if (root == nullptr) return root;
+    if ( direction == 'L') return LeftTreeRotater(root);
+    else return RightTreeRotater(root);
+}
