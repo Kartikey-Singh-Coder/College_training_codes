@@ -1,4 +1,5 @@
 #pragma once
+#include<vector>
 typedef struct TreeNode {
     TreeNode* left;
     int val;
@@ -30,3 +31,5 @@ void NodesAtLevelKth(const TreeNode* root,int k,int &count);
 TreeNode* LeftTreeRotater(TreeNode* root);
 TreeNode* RightTreeRotater(TreeNode* root);
 TreeNode* TreeRotater(TreeNode* root,char direction) ;
+void LeftView(const TreeNode* root, int level,std::vector<int> &answer);
+void RightView(const TreeNode* root,int level,std::vector<int> &answer);

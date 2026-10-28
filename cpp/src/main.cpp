@@ -1,5 +1,6 @@
 #include <iostream>
 #include<TREE.hpp>
+#include<vector>
 int main() {
     auto* root = new TreeNode(10);
     root->left = new TreeNode(20);
@@ -8,18 +9,16 @@ int main() {
     root->left->right = new TreeNode(50);
     root->right->left = new TreeNode(60);
     root->right->right = new TreeNode(70);
-    std::cout << TreeHeight(root)<< "\n";
-    std::cout << CountNodes(root)<<"\n";
-    std::cout << SumNodes(root) << "\n";
-    std::cout << CountLeaves(root) << "\n";
-    std::cout << MaxValue(root) << "\n";
-    std::cout << MinValue(root) << "\n";
-    std::cout << SingleChildNodes(root) << "\n";
-    std::cout << TwoChildNodes(root) << "\n";
-    MirrorTree(root);
-    InOrderTraversal(root);
-    int count = 0;
-    NodesAtLevelKth(root,3,count);
-    std::cout << count << "\n";
+    std::vector<int> answer;
+    LeftView(root,0,answer);
+    for ( const int i : answer ){
+        std::cout<< i << " ";
+    }
+    std::cout<< std::endl;
+    std::vector<int> answer2;
+    RightView(root,0,answer2);
+    for ( const int i : answer2 ) {
+        std::cout<< i << " ";
+    }
     delete root;
 }
